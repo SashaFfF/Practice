@@ -14,8 +14,8 @@
    <string>Form</string>
   </property>
   <property name="windowIcon">
-   <iconset>
-    <normaloff>:/pract/picture2.png</normaloff>:/pract/picture2.png</iconset>
+   <iconset resource="resources.qrc">
+    <normaloff>:/pract/image.png</normaloff>:/pract/image.png</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true"/>
@@ -89,7 +89,11 @@
      <widget class="QLineEdit" name="heightLineEdit"/>
     </item>
     <item row="3" column="1" colspan="2">
-     <widget class="QLineEdit" name="weightLineEdit"/>
+     <widget class="QLineEdit" name="weightLineEdit">
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+     </widget>
     </item>
     <item row="0" column="1">
      <widget class="QRadioButton" name="maleRadioButton">
@@ -145,6 +149,8 @@
    </property>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
  <connections/>
 </ui>

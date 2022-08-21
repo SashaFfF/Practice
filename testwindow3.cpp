@@ -6,15 +6,22 @@ TestWindow3::TestWindow3(QWidget *parent) :
     ui(new Ui::TestWindow3)
 {
     ui->setupUi(this);
+    QWidget::setAttribute(Qt::WA_DeleteOnClose, true);
     QPixmap pixmap(":/pract/backgroundTest3.png");
     QPalette palette;
     palette.setBrush(backgroundRole(), QBrush(pixmap));
     setPalette(palette);
+    fourthWindow = new TestWindow4();
+    setInterfaceStyle();
 }
 
 TestWindow3::~TestWindow3()
 {
+    delete foodQuestionnaire;/*
+    delete physicQuestionnaire;
+    delete basicQuestionnaire;*/
     delete ui;
+    qDebug()<<"delete";
 }
 
 void TestWindow3::on_nextPageButton_clicked()
@@ -94,5 +101,20 @@ void TestWindow3::on_nextPageButton_clicked()
         i++;
     }
     foodQuestionnaire = new FoodQuestionnaire(arr);
+    fourthWindow->basicQuestionnaire = this->basicQuestionnaire;
+    fourthWindow->physicQuestionnaire = this->physicQuestionnaire;
+    fourthWindow->foodQuestionnaire=this->foodQuestionnaire;
+    fourthWindow->show();
+    this->close();
+}
+
+void TestWindow3::setInterfaceStyle()
+{
+    //QString color = "qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(148, 6, 103, 255), stop:0.960976 rgba(255, 38, 38, 255), stop:1 rgba(255, 255, 255, 255));";
+    QString color = "qlineargradient(spread:pad, x1:0, y1:0.068, x2:0, y2:1, stop:0 rgba(28, 160, 172, 255), stop:0.97561 rgba(249, 131, 10, 255), stop:1 rgba(249, 193, 48, 255));";
+    QString press_color =  "qlineargradient(spread:pad, x1:0, y1:0.068, x2:0, y2:1, stop:0 rgba(0, 158, 172, 255), stop:0.97561 rgba(249, 126, 0, 255), stop:1 rgba(249, 193, 48, 255));";
+    QString hover_color = "qlineargradient(spread:pad, x1:0, y1:0.068, x2:0, y2:1, stop:0 rgba(91, 165, 172, 255), stop:0.97561 rgba(249, 148, 45, 255), stop:1 rgba(249, 193, 48, 255));";
+    ui->nextPageButton->setStyleSheet(StyleHelper::getStartButtonsStyle(color, press_color, hover_color));
+    ui->prevPageButton->setStyleSheet(StyleHelper::getStartButtonsStyle(color, press_color, hover_color));
 }
 

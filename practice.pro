@@ -11,29 +11,41 @@ CONFIG += c++11
 SOURCES += \
     basic_questionnaire.cpp \
     food_questionnaire.cpp \
+    goals_questionnaire.cpp \
     main.cpp \
     mainwindow.cpp \
     physical_questionnaire.cpp \
+    sleep_questionnaire.cpp \
     stylehelper.cpp \
     testwindow.cpp \
     testwindow2.cpp \
-    testwindow3.cpp
+    testwindow3.cpp \
+    testwindow4.cpp \
+    testwindow5.cpp \
+    water_questionnaire.cpp
 
 HEADERS += \
     basic_questionnaire.h \
     food_questionnaire.h \
+    goals_questionnaire.h \
     mainwindow.h \
     physical_questionnaire.h \
+    sleep_questionnaire.h \
     stylehelper.h \
     testwindow.h \
     testwindow2.h \
-    testwindow3.h
+    testwindow3.h \
+    testwindow4.h \
+    testwindow5.h \
+    water_questionnaire.h
 
 FORMS += \
     mainwindow.ui \
     testwindow.ui \
     testwindow2.ui \
-    testwindow3.ui
+    testwindow3.ui \
+    testwindow4.ui \
+    testwindow5.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

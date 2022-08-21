@@ -1,0 +1,49 @@
+#include "testwindow5.h"
+#include "ui_testwindow5.h"
+
+TestWindow5::TestWindow5(QWidget *parent) :
+    QWidget(parent),
+    ui(new Ui::TestWindow5)
+{
+    ui->setupUi(this);
+    QPixmap pixmap(":/pract/backgroundTest5.png");
+    QPalette palette;
+    palette.setBrush(backgroundRole(), QBrush(pixmap));
+    setPalette(palette);
+}
+
+TestWindow5::~TestWindow5()
+{
+    delete ui;
+}
+
+void TestWindow5::setInterfaceStyle()
+{
+
+}
+
+void TestWindow5::on_nextPageButton_clicked()
+{
+    double amount;
+    if(ui->radioButton->isChecked()){
+        amount = 0.75;
+    }
+    else if(ui->radioButton_2->isChecked()){
+        amount = 1.25;
+    }
+    else if(ui->radioButton_3->isChecked()){
+        amount = 1.75;
+    }
+    else if(ui->radioButton_4->isChecked()){
+        amount = 2.25;
+    }
+    else if(ui->radioButton_4->isChecked()){
+        amount = 2.75;
+    }
+    else{
+        amount = 3.25;
+    }
+    waterQuestionnaire = new Wate
+    
+}
+

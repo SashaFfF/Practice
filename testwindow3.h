@@ -2,7 +2,7 @@
 #define TESTWINDOW3_H
 
 #include <QWidget>
-
+#include "testwindow4.h"
 #include "stylehelper.h"
 #include "basic_questionnaire.h"
 #include "physical_questionnaire.h"
@@ -27,7 +27,9 @@ private slots:
 
 private:
     Ui::TestWindow3 *ui;
+    void setInterfaceStyle();
     FoodQuestionnaire *foodQuestionnaire;
+    TestWindow4 *fourthWindow;
 };
 
 #endif // TESTWINDOW3_H
